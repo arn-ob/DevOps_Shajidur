@@ -1,0 +1,22 @@
+{
+  "name": "weather_data_api",
+  "version": "1.0.0",
+  "description": "Weather Data API",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "weather",
+    "api",
+    "data",
+    "nodejs",
+    "express"
+  ],
+  "author": "Md. Shajidur Rahman Almazee",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^5.1.0"
+  }
+}
