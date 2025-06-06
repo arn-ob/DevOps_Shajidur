@@ -7,6 +7,9 @@
     "start": "node server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "engines": {
+    "node": ">=20.0.0"
+  },
   "keywords": [
     "weather",
     "api",
@@ -17,6 +20,9 @@
   "author": "Md. Shajidur Rahman Almazee",
   "license": "ISC",
   "dependencies": {
-    "express": "^5.1.0"
+    "cors": "^2.8.5",
+    "dotenv": "^16.5.0",
+    "express": "^5.1.0",
+    "luxon": "^3.6.1"
   }
 }
