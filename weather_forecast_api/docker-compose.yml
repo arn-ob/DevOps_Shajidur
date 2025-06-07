@@ -3,7 +3,7 @@ services:
     # build:
     #   context: .
     #   dockerfile: Dockerfile
-    image: arnobdev/weather_forecast_api:main-ac64966
+    image: arnobdev/weather_forecast_api:main-8eb3434
     ports:
       - "3000:3000"
     environment:
