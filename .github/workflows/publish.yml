@@ -1,0 +1,34 @@
+name: Deploy Weather Forecast API
+
+on: 
+  push:
+    branches:
+      - main
+      
+jobs:
+  Deploy:
+    name: Weather Forecast API Process
+    runs-on: ubuntu-latest
+    steps:
+      - id: checkout
+        name: Checkout Action
+        uses: actions/checkout@v3
+      
+      - id: vars
+        name: Get brandh tag
+        shell: bash
+        run: |
+          echo "::set-output name=tag::${GITHUB_REF#refs/heads/}-$(git rev-parse --short HEAD)"
+        
+      - id: 'auth'
+        name: Login to GitHub Container Registry
+        uses: docker/login-action@v1
+        with:
+          username: ${{ secrets.DOCKER_HUB_USERNAME }}
+          password: ${{ secrets.DOCKER_HUB_PASSWORD }}
+      
+      - id: 'build_and_push'
+        name: Build and push image to Docker Hub
+        run: |
+          docker build . --file weather_forecast_api/Dockerfile -t arnobdev/weather_forecast_api:${{ steps.vars.outputs.tag }}
+          docker push arnobdev/weather_forecast_api:${{ steps.vars.outputs.tag }}
