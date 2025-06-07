@@ -59,7 +59,7 @@ router.get('/hello', (req, res) => {
             res.status(200).json({
                 "hostname": "k8s_weather_server",
                 "datetime": dt.toFormat('yyMMddHHmm'), // "YYMMDDHHmm",
-                "version": "1.0.0",
+                "version": "1.2.3",
                 "weather": {
                     "dhaka": {
                         "temperature": data.current.temp_c,
