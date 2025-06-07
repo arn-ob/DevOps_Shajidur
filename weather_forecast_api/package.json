@@ -1,6 +1,6 @@
 {
   "name": "weather_forecast_api",
-  "version": "1.0.0",
+  "version": "1.2.0",
   "description": "Weather Forecast API",
   "main": "server.js",
   "scripts": {
