@@ -4,6 +4,9 @@ FROM node:24-alpine AS base
 # Set environment variables
 ENV NODE_ENV=production
 
+# Create a non-root user to run the app
+RUN addgroup -S appgroup && adduser -S admin_user -G appgroup
+
 # Set the working directory
 WORKDIR /app
 
@@ -12,6 +15,9 @@ COPY package*.json ./
 
 # Copy application code
 COPY . .
+
+# Ensure proper file ownership
+RUN chown -R admin_user:appgroup /app
 
 # Expose the port
 EXPOSE 3000
