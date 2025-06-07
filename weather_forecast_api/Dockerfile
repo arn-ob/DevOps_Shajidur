@@ -10,9 +10,6 @@ WORKDIR /app
 # Only copy the necessary files to install dependencies
 COPY package*.json ./
 
-# Install only production dependencies
-RUN npm ci
-
 # Copy application code
 COPY . .
 
