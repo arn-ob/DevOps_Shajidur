@@ -14,7 +14,7 @@ WORKDIR /app
 COPY package*.json ./
 
 # Copy application code
-COPY . .
+RUN npm install
 
 # Ensure proper file ownership
 RUN chown -R admin_user:appgroup /app
