@@ -19,6 +19,9 @@ COPY . .
 # Ensure proper file ownership
 RUN chown -R admin_user:appgroup /app
 
+# Use a non-root user
+USER admin_user
+
 # Expose the port
 EXPOSE 3000
 
