@@ -5,7 +5,7 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
-    image: my-express-app:latest
+    image: weather_forecast_api:latest
     ports:
       - "3000:3000"
     environment:
