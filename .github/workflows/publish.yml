@@ -27,8 +27,7 @@ jobs:
           username: ${{ secrets.DOCKER_HUB_USERNAME }}
           password: ${{ secrets.DOCKER_HUB_PASSWORD }}
       
-      - id: 'Build and Push to Docker Hub'
-        name: Build and push image to Docker Hub
+      - name: Build and push image to Docker Hub
         run: |
           docker build . --file weather_forecast_api/Dockerfile -t arnobdev/weather_forecast_api:${{ steps.vars.outputs.tag }}
           docker push arnobdev/weather_forecast_api:${{ steps.vars.outputs.tag }}
