@@ -29,7 +29,7 @@ jobs:
       
       - name: Build and push image to Docker Hub
         run: |
-          docker build . --file weather_forecast_api/Dockerfile -t arnobdev/weather_forecast_api:${{ steps.vars.outputs.tag }}
+          docker build ./weather_forecast_api --file weather_forecast_api/Dockerfile -t arnobdev/weather_forecast_api:${{ steps.vars.outputs.tag }}
           docker push arnobdev/weather_forecast_api:${{ steps.vars.outputs.tag }}
 
       
