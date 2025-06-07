@@ -1,11 +1,8 @@
-version: '3.8'
-
 services:
-  app:
+  weather_forecast_api:
     build:
       context: .
       dockerfile: Dockerfile
-    image: weather_forecast_api:latest
     ports:
       - "3000:3000"
     environment:
@@ -17,4 +14,4 @@ services:
       resources:
         limits:
           cpus: '0.5'
-          memory: 256M
+          memory: 128M
