@@ -1,5 +1,5 @@
 # Use the official Node.js Alpine image for a smaller attack surface
-FROM node:22.16.0-alpine AS base
+FROM node:22.16.0-alpine
 
 # Set environment variables
 ENV NODE_ENV=production
@@ -7,23 +7,26 @@ ENV NODE_ENV=production
 # Create a non-root user to run the app
 RUN addgroup -S appgroup && adduser -S admin_user -G appgroup
 
-# Set the working directory
-WORKDIR /app
+# Set working directory
+WORKDIR /usr/src/app
 
-# Only copy the necessary files to install dependencies
+# Copy package.json and package-lock.json
 COPY package*.json ./
 
-# Copy application code
-RUN npm install
+# Install dependencies
+RUN npm install --production
 
 # Ensure proper file ownership
-RUN chown -R admin_user:appgroup /app
+RUN chown -R admin_user:appgroup /usr/src/app
 
 # Use a non-root user
 USER admin_user
 
-# Expose the port
+# Copy the rest of the app
+COPY . .
+
+# Expose the port your app runs on
 EXPOSE 3000
 
-# Use a minimal, efficient init process
-ENTRYPOINT ["node", "server.js"]
+# Start the app
+CMD ["node", "server.js"]

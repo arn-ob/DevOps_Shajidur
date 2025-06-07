@@ -1,12 +1,15 @@
 services:
   weather_forecast_api:
-    build:
-      context: .
-      dockerfile: Dockerfile
+    # build:
+    #   context: .
+    #   dockerfile: Dockerfile
+    image: arnobdev/weather_forecast_api:main-ac64966
     ports:
       - "3000:3000"
     environment:
       - NODE_ENV=production
+    env_file:
+      - .env
     restart: unless-stopped
     security_opt:
       - no-new-privileges:true
