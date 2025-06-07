@@ -5,7 +5,7 @@
   "main": "server.js",
   "scripts": {
     "start": "node server.js",
-    "test": "jest /usr/src/app/_tests_/weather.test.js"
+    "test": "jest"
   },
   "engines": {
     "node": ">=20.0.0"
