@@ -17,3 +17,8 @@ variable "private_subnet_ids" {
 variable "public_subnet_ids" {
   type = list(string)
 }
+
+variable "instance_types" {
+  type = list(string)
+  default = ["t3.small"]
+}
