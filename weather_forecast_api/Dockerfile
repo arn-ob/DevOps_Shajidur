@@ -1,5 +1,5 @@
 # Use the official Node.js Alpine image for a smaller attack surface
-FROM node:lts-alpine AS base
+FROM node:24-alpine AS base
 
 # Set environment variables
 ENV NODE_ENV=production
