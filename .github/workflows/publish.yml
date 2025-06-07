@@ -33,5 +33,6 @@ jobs:
           docker push arnobdev/weather_forecast_api:${{ steps.vars.outputs.tag }}
 
       - name: Run tests
+        working-directory: ./weather_data_api
         run: npm test
       
