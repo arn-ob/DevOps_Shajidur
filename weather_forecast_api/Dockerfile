@@ -14,7 +14,7 @@ WORKDIR /app
 COPY package*.json ./
 
 # Copy application code
-COPY . .
+COPY . ./
 
 # Ensure proper file ownership
 RUN chown -R admin_user:appgroup /app
