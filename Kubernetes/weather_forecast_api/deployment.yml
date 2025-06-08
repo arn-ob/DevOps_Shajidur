@@ -100,7 +100,7 @@ spec:
 ---
 apiVersion: v1
 data:
-  PORT: 3000
+  PORT: "3000"
   WEATHER_API_KEY: c73a83753cff4fe096f171155250606
   WEATHER_API_URL: https://api.openweathermap.org/data/2.5/weather
 kind: Secret
