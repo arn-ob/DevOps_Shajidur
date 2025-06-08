@@ -4,7 +4,7 @@ Signoz configuration
 
 ```bash
 global:
-  storageClass: "gp3"
+  storageClass: "gp2"
 
 clickhouse:
   installCustomStorageClass: true
@@ -19,3 +19,4 @@ helm install signoz signoz/signoz \
    --timeout 1h \
    -f values.yaml
 ```
+

@@ -23,8 +23,8 @@ resource "aws_eks_node_group" "node_group" {
   capacity_type  = "ON_DEMAND"
 
   scaling_config {
-    desired_size = 1
-    max_size     = 2
+    desired_size = 2
+    max_size     = 3
     min_size     = 1
   }
 
@@ -90,9 +90,43 @@ resource "aws_iam_role_policy_attachment" "eks_cluster_policy" {
   policy_arn = "arn:aws:iam::aws:policy/AmazonEKSClusterPolicy"
 }
 
+data "aws_caller_identity" "current" {}
 
-resource "aws_iam_role_policy_attachment" "ebs_csi_controller_policy" {
-  role       = aws_iam_role.eks_node_role.name
-  policy_arn = "arn:aws:iam::aws:policy/service-role/AmazonEBSCSIDriverPolicy"
+data "aws_eks_cluster" "cluster" {
+  name = aws_eks_cluster.eks.name
 }
 
+# resource "aws_iam_role" "ebs_csi_controller" {
+#   name = "AmazonEKS_EBS_CSI_DriverRole"
+
+#   assume_role_policy = jsonencode({
+#   Version = "2012-10-17"
+#   Statement = [{
+#     Effect = "Allow"
+#     Principal = {
+#       Federated = "arn:aws:iam::${data.aws_caller_identity.current.account_id}:oidc-provider/${replace(data.aws_eks_cluster.cluster.identity.oidc.issuer, "https://", "")}"
+#     }
+#     Action = "sts:AssumeRoleWithWebIdentity"
+#     Condition = {
+#       StringEquals = {
+#         "${replace(data.aws_eks_cluster.cluster.identity.oidc.issuer, "https://", "")}:sub" = "system:serviceaccount:kube-system:ebs-csi-controller-sa"
+#       }
+#     }
+#   }]
+# })
+# }
+
+# resource "aws_iam_role_policy_attachment" "ebs_csi_controller_policy" {
+#   role       = aws_iam_role.ebs_csi_controller.name
+#   policy_arn = "arn:aws:iam::aws:policy/service-role/AmazonEBSCSIDriverPolicy"
+# }
+
+# resource "kubernetes_service_account" "ebs_csi_controller_sa" {
+#   metadata {
+#     name      = "ebs-csi-controller-sa"
+#     namespace = "kube-system"
+#     annotations = {
+#       "eks.amazonaws.com/role-arn" = aws_iam_role.ebs_csi_controller.arn
+#     }
+#   }
+# }
