@@ -12,15 +12,15 @@ resource "aws_eks_cluster" "eks" {
 }
 
 resource "aws_eks_node_group" "node_group" {
-  
+
   cluster_name    = aws_eks_cluster.eks.name
   node_group_name = "${var.cluster_name}-node-group"
   node_role_arn   = aws_iam_role.eks_node_role.arn
   subnet_ids      = var.private_subnet_ids
 
-  version = var.k8s_version
-  instance_types  = var.instance_types
-  capacity_type = "ON_DEMAND"
+  version        = var.k8s_version
+  instance_types = var.instance_types
+  capacity_type  = "ON_DEMAND"
 
   scaling_config {
     desired_size = 1
@@ -33,6 +33,11 @@ resource "aws_eks_node_group" "node_group" {
     aws_iam_role_policy_attachment.cni_policy,
     aws_iam_role_policy_attachment.ecr_policy
   ]
+
+  tags = {
+    "k8s.io/cluster-autoscaler/enabled"             = "true"
+    "k8s.io/cluster-autoscaler/${var.cluster_name}" = "owned"
+  }
 }
 
 resource "aws_iam_role" "eks_cluster_role" {
@@ -84,3 +89,10 @@ resource "aws_iam_role_policy_attachment" "eks_cluster_policy" {
   role       = aws_iam_role.eks_cluster_role.name
   policy_arn = "arn:aws:iam::aws:policy/AmazonEKSClusterPolicy"
 }
+
+
+resource "aws_iam_role_policy_attachment" "ebs_csi_controller_policy" {
+  role       = aws_iam_role.eks_node_role.name
+  policy_arn = "arn:aws:iam::aws:policy/service-role/AmazonEBSCSIDriverPolicy"
+}
+

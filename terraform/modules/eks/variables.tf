@@ -20,7 +20,7 @@ variable "public_subnet_ids" {
 
 variable "instance_types" {
   type = list(string)
-  default = ["t3.small"]
+  default = ["t3.medium"]
 }
 
 variable "k8s_version" {
