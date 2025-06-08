@@ -18,3 +18,12 @@ module "eks" {
   public_subnet_ids  = module.vpc.public_subnets
   vpc_id             = module.vpc.vpc_id
 }
+
+terraform {
+  backend "s3" {
+    bucket         = "tf-bucket-manage"
+    key            = "tf-state/terraform.tfstate"
+    region         = "ap-south-1"
+    encrypt        = true
+  }
+}
