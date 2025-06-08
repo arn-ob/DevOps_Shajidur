@@ -22,3 +22,8 @@ variable "instance_types" {
   type = list(string)
   default = ["t3.small"]
 }
+
+variable "k8s_version" {
+  type    = string
+  default = "1.33"
+}
