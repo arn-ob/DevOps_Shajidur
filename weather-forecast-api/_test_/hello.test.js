@@ -1,6 +1,5 @@
-// tests/helloVersion.test.js
 const request = require('supertest');
-const app = require('../server'); // Adjust path to your Express app
+const app = require('../server');
 const { version } = require('../package.json');
 
 describe('/api/hello endpoint test also version test', () => {
