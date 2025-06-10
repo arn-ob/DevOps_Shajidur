@@ -1,9 +1,8 @@
 services:
   weather_forecast_api:
-    # build:
-    #   context: .
-    #   dockerfile: Dockerfile
-    image: arnobdev/weather_forecast_api:main-8eb3434
+    build:
+      context: .
+      dockerfile: Dockerfile
     ports:
       - "3000:3000"
     environment:

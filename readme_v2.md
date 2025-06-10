@@ -46,30 +46,32 @@ The backend is implemented using Node.js/Express.
 | `/hello`          | GET    | Get dhaka forecast details  |
 | `/health`         | GET    | Health Check Endpoint       |
 
-See [API Documentation](Part_A_Develop_&_Deploy_REST_API/weather-forecast-api/docs/api.md) for detailed request/response examples.
+See [API Documentation](Part_A_Develop_&_Deploy_REST_API/weather-forecast-api/docs/api.md)
 
 ---
 
 ## Dockerization
 
-The application is containerized using Docker for consistency across environments.
+The application is containerized using Docker for consistency across environments. Also given docker compose build and development purpose
 
 **Key Dockerfile elements:**
 - Node.js Alpine image for a smaller images
 - Non-root user for security
 
-See Project ReadMe[Dockerfile](Part_A_Develop_&_Deploy_REST_API/weather-forecast-api/Dockerfile).
+See [Dockerfile](Part_A_Develop_&_Deploy_REST_API/weather-forecast-api/Dockerfile).
+
+See [Docker Compose](Part_A_Develop_&_Deploy_REST_API/weather-forecast-api/docker-compose.yml).
 
 ---
 
 ## CI/CD Pipeline
 
-Continuous Integration and Deployment is managed via [GitHub Actions/GitLab CI/Jenkins/etc.].
+Continuous Integration and Deployment is managed via GitHub Actions.
 
-- **Build:** Lint, test, and build Docker image on each push.
-- **Deploy:** On merge to `main`, deploy to Kubernetes via `kubectl` or Helm.
+- **Build:** Build Docker image on each push.
+- **Deploy:** On merge to `main`, deploy to Kubernetes via `kubectl`.
 
-See [CI/CD config](.github/workflows/main.yml) for the pipeline definition.
+See [CI/CD config](Part_A_Develop_&_Deploy_REST_API/weather-forecast-api/.github/workflows/publish.yml) for the pipeline definition.
 
 ---
 
@@ -77,11 +79,11 @@ See [CI/CD config](.github/workflows/main.yml) for the pipeline definition.
 
 Terraform scripts provision:
 
-- Managed Kubernetes Cluster (EKS/GKE/AKS)
-- VPC, subnets, security groups
+- Managed Kubernetes Cluster
+- VPC, Subnets, Route Table (Public and Private), EKS
 - IAM roles and service accounts
 
-See [infra/terraform/](infra/terraform/) directory.
+See [Terraform](Part_A_Develop_&_Deploy_REST_API/terraform/) directory.
 
 ---
 
@@ -89,12 +91,12 @@ See [infra/terraform/](infra/terraform/) directory.
 
 Kubernetes YAMLs for:
 
-- Deployments
-- Services (LoadBalancer)
-- ConfigMaps & Secrets
-- Ingress (optional)
+- nignx deployments
+- ingress deployment
+- sigNoz deployment
+- weather forecast API deployment
 
-See [k8s/](k8s/) directory.
+See [Kubernetes YAMLs and ReadME](Part_A_Develop_&_Deploy_REST_API/Kubernetes) directory.
 
 ---
 
