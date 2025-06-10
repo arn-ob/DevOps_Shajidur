@@ -6,8 +6,8 @@ Welcome to the **Weather Forecast API**, a Node.js RESTful service listening on 
 
 ## Base URL
 
-```
-http://localhost:3000
+```http
+GET http://localhost:3000
 ```
 
 ---
@@ -21,8 +21,9 @@ http://localhost:3000
 - **Description:** Returns a welcome message or serves as a basic health check.
 
 **Example Request:**
-```bash
-curl http://localhost:3000/
+
+```http
+GET http://localhost:3000/
 ```
 
 **Sample Response:**
@@ -41,8 +42,9 @@ curl http://localhost:3000/
 - **Description:** Checks the health/status of the API.
 
 **Example Request:**
-```bash
-curl http://localhost:3000/api/health
+
+```http
+GET http://localhost:3000/api/health
 ```
 
 **Sample Response:**
@@ -62,8 +64,9 @@ curl http://localhost:3000/api/health
 - **Description:** Returns server identification, build version, current date-time, and sample weather data.
 
 **Example Request:**
-```bash
-curl http://localhost:3000/api/hello
+
+```http
+GET http://localhost:3000/api/hello
 ```
 
 **Sample Response:**

@@ -185,6 +185,7 @@ See [Kubernetes YAMLs and ReadME](Part_A_Develop_and_Deploy_REST_API/Kubernetes)
    ```
 2. **Build and Developing Applicatiomn**
    ```bash
+   cd Part_A_Develop_and_Deploy_REST_API/weather-forecast-api
    docker compose up --build
    ```
 3. **Run locally**

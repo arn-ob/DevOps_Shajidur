@@ -26,7 +26,7 @@ This architecture diagram is a scalable, secure, and highly available e-commerce
 
 ## 3. Domain Entry Points
 
-- **www.e-commerce.com**
+- **e-commerce.com**
   - Main customer-facing website.
   - Requests are routed through Cloudflare → CloudFront → S3/Other AWS services.
 - **admin.e-commerce.com**
