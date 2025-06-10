@@ -1,16 +1,17 @@
-# E-Commerce DevOps Project
+# DevOps Challenge: API Development, Deployment & System Architecture
 
 ## Table of Contents
 1. [Project Overview](#project-overview)
-2. [Architecture Diagram](#architecture-diagram)
+2. [File Structure](#file-structure)
 3. [REST API](#rest-api)
 4. [Dockerization](#dockerization)
 5. [CI/CD Pipeline](#cicd-pipeline)
 6. [Infrastructure as Code (Terraform)](#infrastructure-as-code-terraform)
 7. [Kubernetes Manifests](#kubernetes-manifests)
 8. [Setup Instructions](#setup-instructions)
-9. [Design & Reasoning](#design--reasoning)
-10. [Thank you](#thank-you)
+9. [Architecture Diagram](#architecture-diagram)
+10. [Design & Reasoning](#design--reasoning)
+11. [Thank you](#thank-you)
 
 ---
 
