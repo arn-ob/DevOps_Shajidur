@@ -54,7 +54,7 @@ This architecture diagram depicts a highly available, cloud-native e-commerce pl
 ## 4. Backend for Admin Portal
 
 - **EC2 Auto Scaling Group**
-  - Scalable group of EC2 instances serving the admin portal, protected by an Elastic Load Balancer and managed via API Gateway.
+  - A scalable group of EC2 instances serving the admin portal, protected by an Elastic Load Balancer and managed via API Gateway.
 
 ---
 
@@ -111,7 +111,7 @@ This architecture diagram depicts a highly available, cloud-native e-commerce pl
 ## 10. Key Architectural Benefits
 
 - **Security:** DDoS protection, API Gateway controls, and AWS IAM.
-- **Scalability:** Auto-scaling at every layer—Kubernetes, EC2, RDS, and serverless.
+- **Scalability:** Auto-scaling at every layer Kubernetes, EC2, RDS, and serverless.
 - **Performance:** Distributed caching and read scaling.
 - **Reliability:** Redundancy through multi-pod, multi-instance, and multi-replica deployments.
 - **Separation of Concerns:** Decoupled microservices, asynchronous processing, and serverless event handling.
