@@ -118,4 +118,4 @@ This architecture diagram depicts a highly available, cloud-native e-commerce pl
 
 ---
 
-_This architecture is robust, maintainable, and designed for high-traffic, enterprise-grade e-commerce solutions._
+_This architecture is scalable, maintainable, and designed for high-traffic, enterprise-grade e-commerce solutions._
