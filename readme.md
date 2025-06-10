@@ -87,7 +87,32 @@ Part B: System Architecture Design/
 
 ## REST API
 
-The backend is implemented using Node.js/Express. 
+The backend is implemented using Node.js/Express.
+
+This REST API integrates with an external weather data provider, [WeatherAPI](https://www.weatherapi.com/), to fetch real-time weather information.
+
+---
+
+##### Service Endpoint
+
+- **API URL:**  
+  ```
+  http://api.weatherapi.com/v1/current.json
+  ```
+
+##### Purpose & Usage
+
+- The WeatherAPI service is used to retrieve current weather data for specified locations.
+- The API is integrated within our backend to power weather-related features and display up-to-date conditions to users.
+
+##### Example Request
+
+```http
+GET http://api.weatherapi.com/v1/current.json?key=<YOUR_API_KEY>&q=London
+```
+
+- Replace `<YOUR_API_KEY>` with your valid WeatherAPI access key.
+- `q` parameter specifies the location (e.g., city name).
 
 ### Main Endpoints
 
