@@ -76,7 +76,9 @@ kubectl apply -f weather_forecast_api/deployment.yml
 NOTE: `WEATHER_API_KEY` key not workable. given a sample key
 
 
-## Step 4: 
+## Step 4: Deploy SigNoz for metrics, logs and tracing
+
+See [SigNoz Installation and Documation](signoz/readme.md)
 
 ---
 
