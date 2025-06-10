@@ -13,6 +13,9 @@ app.use(express.json());
 // Routes
 app.use('/api', api_routes);
 
+app.get('/', (req, res) => {
+  res.json({message: 'Welcome to the Weather Data API'});
+})
 
 app.listen(process?.env?.PORT || 3000, () => {
   console.log(`Running Weather Data API on port ${process?.env?.PORT || 3000}`);
