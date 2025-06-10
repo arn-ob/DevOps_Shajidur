@@ -174,7 +174,7 @@ See [Kubernetes YAMLs and ReadME](Part_A_Develop_and_Deploy_REST_API/Kubernetes)
    terraform plan
    terraform apply
    ```
-5. **Deploy to Kubernetes**
+5. **Deploy Service to Kubernetes**
    Follow the README [Kubernetes README](Part_A_Develop_and_Deploy_REST_API/Kubernetes/readme.md) directory.
 
 ---
