@@ -2,7 +2,6 @@
 
 ![e-commerce cloud architecture diagram](image/architecture-diagram.jpg)
 
-
 This architecture diagram depicts a highly available, cloud-native e-commerce platform leveraging AWS managed services, Kubernetes (EKS), serverless computing, and robust caching and messaging layers. Below is a detailed breakdown of the components and their interactions:
 
 ---

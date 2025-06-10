@@ -80,7 +80,7 @@ Part A: Develop & Deploy a REST API/
 ```plaintext
 Part B: System Architecture Design/
 ├── image
-│   └── diagram.jpg
+│   └── architecture-diagram.jpg
 └── readme.md
 ```
 
