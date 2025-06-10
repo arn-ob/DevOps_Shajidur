@@ -11,7 +11,6 @@
 8. [Setup Instructions](#setup-instructions)
 9. [Architecture Diagram](#architecture-diagram)
 10. [Design & Reasoning](#design--reasoning)
-11. [Thank you](#thank-you)
 
 ---
 
@@ -194,7 +193,3 @@ See [Kubernetes YAMLs and ReadME](Part_A_Develop_and_Deploy_REST_API/Kubernetes)
 - **Security:** Follows least-privilege in IAM, uses secrets for sensitive data.
 - **Scalability:** Kubernetes enables auto-scaling and rolling deployments.
 - **Observability:** Logs and metrics exposed for monitoring.
-
----
-
-## Thank You
