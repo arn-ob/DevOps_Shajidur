@@ -29,7 +29,7 @@ This project demonstrates a scalable, cloud-native e-commerce application, focus
 ## File Structure
 
 ```plaintext
-Part A: Develop & Deploy a REST API/
+Part_A_Develop_and_Deploy_REST_API/
 ├── Kubernetes
 │   ├── readme.md
 │   ├── ingress
@@ -78,7 +78,7 @@ Part A: Develop & Deploy a REST API/
 ```
 
 ```plaintext
-Part B: System Architecture Design/
+Part_B_System_Architecture_Design/
 ├── image
 │   └── architecture-diagram.jpg
 └── readme.md
