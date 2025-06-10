@@ -109,7 +109,6 @@ data:
   OTEL_SERVICE_NAME: d2VhdGhlcl9mb3JlY2FzdF9hcGk=
   OTEL_EXPORTER_OTLP_HEADERS: c2lnbm96LWluZ2VzdGlvbi1rZXk9YWJj
   NODE_OPTIONS: LS1yZXF1aXJlIEBvcGVudGVsZW1ldHJ5L2F1dG8taW5zdHJ1bWVudGF0aW9ucy1ub2RlL3JlZ2lzdGVy
-
 kind: Secret
 metadata:
   name: weather-forecast-api-secret

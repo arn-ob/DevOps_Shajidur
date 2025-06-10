@@ -156,16 +156,16 @@ See [Kubernetes YAMLs and ReadME](Part_A_Develop_and_Deploy_REST_API/Kubernetes)
 
 1. **Clone the repository**
    ```bash
-   git clone https://github.com/yourusername/ecommerce-devops.git
-   cd ecommerce-devops
+   git clone https://github.com/arn-ob/DevOps_Shajidur.git
+   cd DevOps_Shajidur
    ```
-2. **Build Docker image**
+2. **Build and Developing Applicatiomn**
    ```bash
-   docker build -t ecommerce-app .
+   docker compose up --build
    ```
 3. **Run locally**
    ```bash
-   docker run -p 8080:8080 ecommerce-app
+   docker run -p 3000:3000 weather_forecast_api
    ```
 4. **Provision Cloud Infrastructure**
    ```bash
@@ -176,7 +176,6 @@ See [Kubernetes YAMLs and ReadME](Part_A_Develop_and_Deploy_REST_API/Kubernetes)
    ```
 5. **Deploy to Kubernetes**
    Follow the README [Kubernetes README](Part_A_Develop_and_Deploy_REST_API/Kubernetes/readme.md) directory.
-6. 
 
 ---
 
@@ -197,7 +196,5 @@ See [Kubernetes YAMLs and ReadME](Part_A_Develop_and_Deploy_REST_API/Kubernetes)
 - **Observability:** Logs and metrics exposed for monitoring.
 
 ---
-
-
 
 ## Thank You
